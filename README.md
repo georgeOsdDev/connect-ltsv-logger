@@ -1,4 +1,4 @@
-## introduction
+## Introduction
 
 [LTSV](http://ltsv.org/) format logger for (connect|express).
 
@@ -15,18 +15,15 @@ var out = fs.createWriteStream("ltsv-access.log",{flags: 'a+'}),
 
 // define tokens
 var ltsv = [];
-ltsv.push("time");
 ltsv.push("host");
-ltsv.push("X-Forwarded-For");
+ltsv.push("ident");
+ltsv.push("user");
+ltsv.push("time");
 ltsv.push("req");
 ltsv.push("status");
 ltsv.push("size");
 ltsv.push("referer");
 ltsv.push("ua");
-ltsv.push("vhost");
-ltsv.push("reqtime");
-ltsv.push("X-Cache");
-ltsv.push("X-Runtime");
 
 var app = express();
 app.configure(function(){
@@ -43,10 +40,9 @@ app.configure(function(){
 
 ```bash
 tail -f ltsv-access.log
-time:[13/Feb/2013:19:15:44 +09:00]<TAB>host:127.0.0.1<TAB>X-Forwarded-For:-<TAB>req:GET /stylesheets/style.css HTTP/1.1<TAB>method:GET<TAB>uri:/stylesheets/style.css<TAB>status:200<TAB>size:110<TAB>referer:http://localhost:3001/<TAB>ua:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17<TAB>vhost:localhost:3001<TAB>reqtime:6<TAB>X-Cache:-<TAB>X-Runtime:-
-time:[13/Feb/2013:19:15:45 +09:00]<TAB>host:127.0.0.1<TAB>X-Forwarded-For:-<TAB>req:GET /stylesheets/style.css HTTP/1.1<TAB>method:GET<TAB>uri:/stylesheets/style.css<TAB>status:200<TAB>size:110<TAB>referer:http://localhost:3001/<TAB>ua:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17<TAB>vhost:localhost:3001<TAB>reqtime:6<TAB>X-Cache:-<TAB>X-Runtime:-
-
+host:127.0.0.1<TAB>ident:-<TAB>user:-<TAB>time:[13/Feb/2013:19:15:44 +09:00]<TAB>req:GET /stylesheets/style.css HTTP/1.1<TAB>status:200<TAB>size:110<TAB>referer:http://localhost:3001/<TAB>ua:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17
 ```
+
 ## Options
 * format: Format string or Token array, see below for tokens
 * stream :is the same as connect.logger.
