@@ -72,118 +72,153 @@ concise output colored by response status for development use (Not ltsv format).
 The following tokens are available
 
 * time
-```js
-logger.token("time",function(){
-  return "[" + moment().format("DD/MMM/YYYY:HH:mm:ss Z") + "]" ;
-});
-```
+
+	```js
+	logger.token("time",function(){
+	  return "[" + moment().format("DD/MMM/YYYY:HH:mm:ss Z") + "]" ;
+	});
+	```
+
 * host
-```js
-logger.token("host",function(req,res){
-  return req.connection.address().address || '-';
-});
-```
+
+	```js
+	logger.token("host",function(req,res){
+	  return req.connection.address().address || '-';
+	});
+	```
+
 * X-Forwarded-For
-```js
-logger.token("X-Forwarded-For",function(req,res){
-  return res.getHeader("X-Forwarded-For") || "-";
-});
-```
+
+	```js
+	logger.token("X-Forwarded-For",function(req,res){
+	  return res.getHeader("X-Forwarded-For") || "-";
+	});
+	```
+
 * user
-```js
-logger.token("user",function(req,res){
-  return '-';
-});
-```
+
+	```js
+	logger.token("user",function(req,res){
+	  return '-';
+	});
+	```
+
 * ident
-```js
-logger.token("ident",function(req,res){
-  return '-';
-});
-```
+
+	```js
+	logger.token("ident",function(req,res){
+	  return '-';
+	});
+	```
+
 * req
-```js
-logger.token("req",function(req,res){
-  var ret = [];
-  ret.push(req.method);
-  ret.push(req.url);
-  ret.push("HTTP/"+req.httpVersion);
-  return ret.join(" ");
-});
-```
+
+	```js
+	logger.token("req",function(req,res){
+	  var ret = [];
+	  ret.push(req.method);
+	  ret.push(req.url);
+	  ret.push("HTTP/"+req.httpVersion);
+	  return ret.join(" ");
+	});
+	```
+
 * method
-```js
-logger.token("method",function(req,res){
-  return req.method;
-});
-```
+
+	```js
+	logger.token("method",function(req,res){
+	  return req.method;
+	});
+	```
+
 * uri
-```js
-logger.token("uri",function(req,res){
-  return url.parse(req.url).href;
-});
-```
+
+	```js
+	logger.token("uri",function(req,res){
+	  return url.parse(req.url).href;
+	});
+	```
+
 * protocol
-```js
-logger.token("protocol",function(req,res){
-  return url.parse(req.url).protocol;
-});
-```
+
+	```js
+	logger.token("protocol",function(req,res){
+	  return url.parse(req.url).protocol;
+	});
+	```
+
 * status
-```js
-logger.token("status",function(req,res){
-  return res.statusCode;
-});
-```
+
+	```js
+	logger.token("status",function(req,res){
+	  return res.statusCode;
+	});
+	```
+
 * size
-```js
-logger.token("size",function(req,res){
-  return res.getHeader("content-length");
-});
-```
+
+	```js
+	logger.token("size",function(req,res){
+	  return res.getHeader("content-length");
+	});
+	```
+
 * reqsize
-```js
-logger.token("reqsize",function(req,res){
-  if(req.body) return req.body.length;
-  return "-";
-});
-```
+
+	```js
+	logger.token("reqsize",function(req,res){
+	  if(req.body) return req.body.length;
+	  return "-";
+	});
+	```
+
 * referer
-```js
-logger.token("referer",function(req,res){
-  return req.headers['referer'] || req.headers['referrer'];
-});
-```
+
+	```js
+	logger.token("referer",function(req,res){
+	  return req.headers['referer'] || req.headers['referrer'];
+	});
+	```
+
 * ua
-```js
-logger.token("ua",function(req,res){
-  return req.headers['user-agent'];
-});
-```
+
+	```js
+	logger.token("ua",function(req,res){
+	  return req.headers['user-agent'];
+	});
+	```
+
 * vhost
-```js
-logger.token("vhost",function(req,res){
-  return req.headers["host"];
-});
-```
+
+	```js
+	logger.token("vhost",function(req,res){
+	  return req.headers["host"];
+	});
+	```
+
 * reqtime
-```js
-logger.token("reqtime",function(req,res){
-  return new Date - req._startTime;;
-});
-```
+
+	```js
+	logger.token("reqtime",function(req,res){
+	  return new Date - req._startTime;;
+	});
+	```
+
 * X-Cache
-```js
-logger.token("X-Cache",function(req,res){
-  return res.getHeader('X-Cache');
-});
-```
+
+	```js
+	logger.token("X-Cache",function(req,res){
+	  return res.getHeader('X-Cache');
+	});
+	```
+
 * X-Runtime
-```js
-logger.token("X-Runtime",function(req,res){
-  return res.getHeader('X-Runtime');
-});
-```
+
+	```js
+	logger.token("X-Runtime",function(req,res){
+	  return res.getHeader('X-Runtime');
+	});
+	```
 
 ## Install
 npm do
