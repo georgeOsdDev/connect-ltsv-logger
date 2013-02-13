@@ -1,0 +1,31 @@
+{
+  "name": "connect-ltsv-logger",
+  "version": "0.0.1",
+  "description": "ltsv formated access logger for connect based application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/test.js"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "connect": "2.7.2",
+    "moment": "2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgeosddev/connect-ltsv-logger.git"
+  },
+  "keywords": [
+    "ltsv",
+    "logger",
+    "connect",
+    "express"
+  ],
+  "author": "Takeharu.Oshida",
+  "license": "MIT"
+}
