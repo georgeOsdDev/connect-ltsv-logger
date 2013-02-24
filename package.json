@@ -1,6 +1,6 @@
 {
   "name": "connect-ltsv-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ltsv formated access logger for connect based application",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "express"
   ],
   "author": "Takeharu.Oshida",
+  "contributors":[
+    "tshimogaisho"
+  ],
   "license": "MIT"
 }

@@ -234,3 +234,7 @@ Source code can be found on [github](https://github.com/georgeOsdDev/connect-lts
 ## Author
 
 Developed by [Takeharu.Oshida](http://about.me/takeharu.oshida)
+
+## Contributor
+
+* [tshimogaisho](https://github.com/tshimogaisho)
